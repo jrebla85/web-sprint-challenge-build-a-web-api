@@ -1,5 +1,12 @@
 const express = require('express');
+const cors = require("cors");
+const helmet = require("helmet");
+
 const server = express();
+
+server.use(cors());
+server.use(helmet());
+server.use(express.json());
 
 // Configure your server here
 // Build your actions router in /api/actions/actions-router.js
