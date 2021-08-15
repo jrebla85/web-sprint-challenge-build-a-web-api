@@ -18,11 +18,13 @@ const checkId = async (req, res, next) => {
 };
 
 const checkBody = (req, res, next) => {
-    const name = req.body;
-    const description = req.body;
-    if(!name || !description || !name.trim() || !description.trim()){
+    const {name} = req.body;
+    const {description} = req.body;
+    if(!name || !description){
         res.status(400).json({ message: "missing required name and description field" })
     }else{
+        req.name = name;
+        req.description = description;
         next();
     }
 }
