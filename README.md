@@ -18,15 +18,15 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 ### Task 1: Project Set Up
 
-- [ ] Run `npm install` to install your dependencies.
-- [ ] Run tests locally executing `npm test`.
-- [ ] Reset the database to its original state executing `npm run resetdb`.
+- [ x ] Run `npm install` to install your dependencies.
+- [ x ] Run tests locally executing `npm test`.
+- [ x ] Reset the database to its original state executing `npm run resetdb`.
 
 ### Task 2: CodeGrade Setup
 
-- [ ] Accept the repository sent to your email inbox associated with your Github account.
-- [ ] Make a commit and push it to Github.
-- [ ] Check to see that Codegrade has accepted your git submission.
+- [ x ] Accept the repository sent to your email inbox associated with your Github account.
+- [ x ] Make a commit and push it to Github.
+- [ x ] Check to see that Codegrade has accepted your git submission.
 
 ### Task 3: Project Requirements (MVP)
 
@@ -37,60 +37,60 @@ Your finished project must include all of the following requirements:
 A _"test"_ script already exists you can use to run tests against your code.
 A _"resetdb"_ script exists that allows you to reset the database to its original state.
 
-- [ ] Write an _npm script_ named _"start"_ that uses `node` to run the API server.
-- [ ] Write an _npm script_ named _"server"_ that uses `nodemon` to run the API server.
-- [ ] Install _nodemon_ as a development dependency that would not be used in production.
+- [ x ] Write an _npm script_ named _"start"_ that uses `node` to run the API server.
+- [ x ] Write an _npm script_ named _"server"_ that uses `nodemon` to run the API server.
+- [ x ] Install _nodemon_ as a development dependency that would not be used in production.
 
 #### Environment Variables
 
-- [ ] Bring the port number from the `process.env` variable, falling back to `5000` if `process.env.PORT` is undefined.
+- [ x ] Bring the port number from the `process.env` variable, falling back to `5000` if `process.env.PORT` is undefined.
 
 #### Endpoints
 
 Inside `api/projects/projects-router.js` build the following endpoints:
 
-- [ ] `[GET] /api/projects`
+- [ x ] `[GET] /api/projects`
   - Returns an array of projects as the body of the response.
   - If there are no projects it responds with an empty array.
-- [ ] `[GET] /api/projects/:id`
+- [ x ] `[GET] /api/projects/:id`
   - Returns a project with the given `id` as the body of the response.
   - If there is no project with the given `id` it responds with a status code 404.
-- [ ] `[POST] /api/projects`
+- [ x ] `[POST] /api/projects`
   - Returns the newly created project as the body of the response.
   - If the request body is missing any of the required fields it responds with a status code 400.
-- [ ] `[PUT] /api/projects/:id`
+- [ x ] `[PUT] /api/projects/:id`
   - Returns the updated project as the body of the response.
   - If there is no project with the given `id` it responds with a status code 404.
   - If the request body is missing any of the required fields it responds with a status code 400.
-- [ ] `[DELETE] /api/projects/:id`
+- [ x ] `[DELETE] /api/projects/:id`
   - Returns no response body.
   - If there is no project with the given `id` it responds with a status code 404.
-- [ ] `[GET] /api/projects/:id/actions`
+- [ x ] `[GET] /api/projects/:id/actions`
   - Returns an array of actions (could be empty) belonging to a project with the given `id`.
   - If there is no project with the given `id` it responds with a status code 404.
 
 Inside `api/actions/actions-router.js` build endpoints for performing CRUD operations on _actions_:
 
-- [ ] `[GET] /api/actions`
+- [ x ] `[GET] /api/actions`
   - Returns an array of actions (or an empty array) as the body of the response.
-- [ ] `[GET] /api/actions/:id`
+- [ x ] `[GET] /api/actions/:id`
   - Returns an action with the given `id` as the body of the response.
   - If there is no action with the given `id` it responds with a status code 404.
-- [ ] `[POST] /api/actions`
+- [ x ] `[POST] /api/actions`
   - Returns the newly created action as the body of the response.
   - If the request body is missing any of the required fields it responds with a status code 400.
   - When adding an action make sure the `project_id` provided belongs to an existing `project`.
-- [ ] `[PUT] /api/actions/:id`
+- [ x ] `[PUT] /api/actions/:id`
   - Returns the updated action as the body of the response.
   - If there is no action with the given `id` it responds with a status code 404.
   - If the request body is missing any of the required fields it responds with a status code 400.
-- [ ] `[DELETE] /api/actions/:id`
+- [ x ] `[DELETE] /api/actions/:id`
   - Returns no response body.
   - If there is no action with the given `id` it responds with a status code 404.
 
 #### Middleware functions
 
-- [ ] Write at least two middleware functions for this API, and consume them in the proper places of your code.
+- [ x ] Write at least two middleware functions for this API, and consume them in the proper places of your code.
 
 ### Database Schemas
 
@@ -143,17 +143,36 @@ We have provided test data for all the resources.
 
 ## Submission format
 
-- [ ] Submit via Codegrade by pushing commits to your `<firstName-lastName>` branch on Github.
-- [ ] Check Codegrade before the deadline to compare its results against your local tests.
-- [ ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback.
-- [ ] New commits will be evaluated by Codegrade if pushed _before_ the sprint challenge deadline.
+- [ x ] Submit via Codegrade by pushing commits to your `<firstName-lastName>` branch on Github.
+- [ x ] Check Codegrade before the deadline to compare its results against your local tests.
+- [ x ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback.
+- [ x ] New commits will be evaluated by Codegrade if pushed _before_ the sprint challenge deadline.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+
+node: 
+
+1) allows us to use js in both client and server.
+2) javascript is single threaded and removes the complexity of having multiple threads.
+3) js is async and allows us to take advantage of full processing power.
+4) using js allows us access to npm repo.
+
 1. Understand and explain the use of Middleware.
+
+middleware allows us to give instructions to our api's and simplifies handling endpoints by only needing to write certain code snippets once instead of inside each endpoint.
+
 1. The basic principles of the REST architectural style.
+
+  everything is a resource, and each resource is accessible via a unique url. Resources can hace multiple representations, and communication happens over a stateless protocol (HTTP). Resource management happens via HTTP methods (GET, POST, PUT, DELETE).
+
 1. Understand and explain the use of Express Routers.
+
+Routers are not required, but allow us to beak up our code making it easier to read, write and understand our endpoints better.
+
 1. Describe tooling used to manually test the correctness of an API.
+
+We can use an application such as postman to make GET, POST, PUT and DELETE requests to our endpoints to be sure they are functioning as intended.

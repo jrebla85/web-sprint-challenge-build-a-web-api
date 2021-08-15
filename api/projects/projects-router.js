@@ -2,7 +2,6 @@
 const express = require("express");
 
 const Projects = require("./projects-model");
-const Actions = require("../actions/actions-model");
 const { checkId,
         checkBody } = require("./projects-middleware");
 
@@ -12,7 +11,7 @@ router.get("/", (req, res, next) => {
     Projects.get()
     .then(projects => {
         if(!projects){
-            res.status(404).json([])
+            res.json([])
         }else{
             res.json(projects)
         }
@@ -63,6 +62,6 @@ router.use((err, req, res, next) => { //eslint-disable-line
       message: err.message,
       stack: err.stack,
     })
-  })
+  });
 
 module.exports = router

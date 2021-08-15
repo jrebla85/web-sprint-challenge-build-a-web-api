@@ -12,7 +12,7 @@ server.use(helmet());
 server.use(express.json());
 
 server.use("/api/projects", projectsRouter);
-server.use("api/actions", actionsRouter);
+server.use("/api/actions", actionsRouter);
 
 // Configure your server here
 // Build your actions router in /api/actions/actions-router.js
