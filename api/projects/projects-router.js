@@ -2,7 +2,32 @@
 const express = require("express");
 
 const Projects = require("./projects-model");
+const Actions = require("../actions/actions-model");
 
 const router = express.Router();
+
+router.get("/", (req, res) => {
+
+});
+
+router.get("/:id", (req, res) => {
+
+});
+
+router.post("/" (req, res) => {
+
+});
+
+router.put("/:id", (req, res) => {
+
+});
+
+router.delete("/:id", (req, res) => {
+
+});
+
+router.get("/:id/actions", (req, res) => {
+
+});
 
 module.exports = router
