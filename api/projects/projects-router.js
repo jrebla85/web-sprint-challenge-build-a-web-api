@@ -49,8 +49,12 @@ router.delete("/:id", checkId, async (req, res, next) => {
     }
 });
 
-router.get("/:id/actions", checkId, (req, res) => {
-
+router.get("/:id/actions", checkId, (req, res, next) => {
+    Projects.getProjectActions(req.params.id)
+    .then(actions => {
+        res.json(actions)
+    })
+    .catch(next)
 });
 
 router.use((err, req, res, next) => { //eslint-disable-line
