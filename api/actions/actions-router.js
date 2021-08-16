@@ -4,7 +4,7 @@ const express = require("express");
 const Actions = require("./actions-model");
 
 const { checkId,
-    checkBody } = require("./actions-middlware");
+        checkBody } = require("./actions-middlware");
 
 const router = express.Router();
 

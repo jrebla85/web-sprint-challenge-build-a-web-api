@@ -7,7 +7,7 @@ const checkId = async (req, res, next) => {
     try{
         const actions = await Actions.get(id);
         if(!actions){
-            res.status(404).json({ message: `No project with id: ${id}` })
+            res.status(404).json({ message: `No action with id: ${id}` })
         }else{
             req.actions = actions;
             next();
